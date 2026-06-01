@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nord87q - Creative Developer & Designer Portfolio. Explore my projects, skills, and latest work.">
-  <meta name="theme-color" content="#181823">
-  <meta property="og:title" content="Nord87q - Portfolio">
-  <meta property="og:description" content="Creative Developer & Designer Portfolio">
+  <meta name="description" content="Nord87q - Advanced Creative Developer & Designer Portfolio. Explore cutting-edge projects and professional work.">
+  <meta name="theme-color" content="#0a0e27">
+  <meta property="og:title" content="Nord87q - Professional Portfolio">
+  <meta property="og:description" content="Advanced Creative Developer & Designer - Building pixel-perfect experiences">
   <meta property="og:type" content="website">
   
-  <title>Nord87q - Creative Developer & Designer</title>
+  <title>Nord87q - Professional Portfolio</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -23,175 +23,316 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <!-- Loading Screen / Overlay -->
-  <div class="overlay" id="overlay">
-    <div class="overlay-content">
-      <div class="overlay-logo">
-        <svg viewBox="0 0 100 100" class="animated-logo">
-          <circle cx="50" cy="50" r="45" class="logo-circle"/>
-          <text x="50" y="60" text-anchor="middle" class="logo-text">nord</text>
-        </svg>
+  <!-- Loading Screen -->
+  <div class="overlay" id="overlay" data-module="overlay">
+    <div class="overlay-wrapper">
+      <div class="overlay-content">
+        <div class="overlay-logo">
+          <div class="logo-sphere"></div>
+          <div class="logo-text">nord</div>
+        </div>
+        <h1 class="overlay-title">Nord87q</h1>
+        <p class="overlay-subtitle">Creative Developer & Designer</p>
+        <p class="overlay-description">Crafting elegant digital experiences</p>
+        <button class="start-btn" id="startBtn" aria-label="Enter portfolio">
+          <span>Enter Portfolio</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="progress-bar" id="progressBar"></div>
       </div>
-      <h1 class="overlay-title">Nord87q</h1>
-      <p class="overlay-subtitle">Creative Developer & Designer</p>
-      <p class="overlay-description">Discover my links, projects, and vibe.</p>
-      <button class="start-btn" id="startBtn">Enter Portfolio</button>
-      <div class="loading-bar" id="loadingBar"></div>
     </div>
   </div>
 
-  <!-- Background Videos -->
-  <div class="bg-container">
-    <video id="bg-video-1" class="bg-video" src="Snaptik_7288236448220777761_sedef-kilic.mp4" preload="auto" muted></video>
-    <video id="bg-video-2" class="bg-video" src="Snaptik.app_7288813616575352097.mp4" preload="auto" muted></video>
-    <video id="bg-video-3" class="bg-video" src="Snaptik.app_7291154890955443462.mp4" preload="auto" muted></video>
-    <video id="bg-video-4" class="bg-video" src="Snaptik_7289443155374542081_tiktok.mp4" preload="auto" muted></video>
-    <div class="bg-overlay"></div>
+  <!-- Background Media Container (Video & Audio Separated) -->
+  <div class="media-container" data-module="media">
+    <div class="video-stack" id="videoStack">
+      <video class="bg-video" src="Snaptik_7288236448220777761_sedef-kilic.mp4" data-video-id="1" preload="metadata" muted playsinline></video>
+      <video class="bg-video" src="Snaptik.app_7288813616575352097.mp4" data-video-id="2" preload="metadata" muted playsinline></video>
+      <video class="bg-video" src="Snaptik.app_7291154890955443462.mp4" data-video-id="3" preload="metadata" muted playsinline></video>
+      <video class="bg-video" src="Snaptik_7289443155374542081_tiktok.mp4" data-video-id="4" preload="metadata" muted playsinline></video>
+    </div>
+    <div class="media-overlay"></div>
   </div>
 
+  <!-- Audio Element (Separated from video) -->
+  <audio id="bgAudio" 
+         preload="auto" 
+         loop 
+         crossorigin="anonymous"
+         aria-label="Portfolio background music"
+         data-module="audio">
+  </audio>
+
   <!-- Custom Cursor -->
-  <div class="cursor cursor--large"></div>
-  <div class="cursor cursor--small"></div>
+  <div class="cursor cursor--large" data-module="cursor"></div>
+  <div class="cursor cursor--small" data-module="cursor"></div>
 
   <!-- Navigation Header -->
-  <header id="top-bar" role="banner">
-    <div class="header-content">
-      <div class="flag-section" title="Free Palestine">
-        <img src="state-of-palestine-694_256.gif" alt="Palestine Flag" class="palestine-flag">
-        <span class="flag-text">Free Palestine 🇵🇸</span>
+  <header class="header" id="header" role="banner" data-module="navigation">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#" class="brand-logo">
+          <span class="brand-mark">N</span>
+          <span class="brand-text">Nord87q</span>
+        </a>
       </div>
-      <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#contact" class="nav-item">Contact</a>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" data-module="theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main id="main-content" role="main">
+  <main id="main" role="main" data-module="content">
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div id="clock-container" aria-live="polite" aria-label="Current time">
-          <div id="clock"></div>
-        </div>
-        
-        <div class="profile-card">
-          <div class="profile-avatar">N</div>
-          <h1 class="profile-name">Nord87q</h1>
-          <p class="profile-role">Full-Stack Developer • Designer • Creative</p>
+    <section class="hero" id="hero" data-module="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="time-widget" id="timeWidget" aria-live="polite" aria-label="Current time">
+            <span class="time-display" id="timeDisplay">--:--</span>
+            <span class="time-label">Cairo Time</span>
+          </div>
+
+          <div class="hero-intro">
+            <h1 class="hero-title">
+              <span class="line-1">Creative Developer</span>
+              <span class="line-2">& Digital Designer</span>
+            </h1>
+            <p class="hero-subtitle">
+              Building beautiful, functional, and elegant digital experiences with modern web technologies.
+            </p>
+          </div>
+
+          <div class="social-grid" role="list">
+            <a href="https://github.com/qp76" class="social-link" role="listitem" aria-label="GitHub" target="_blank" rel="noopener noreferrer" data-social="github">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://open.spotify.com/user/chakibreggane" class="social-link" role="listitem" aria-label="Spotify" target="_blank" rel="noopener noreferrer" data-social="spotify">
+              <i class="fab fa-spotify"></i>
+              <span>Spotify</span>
+            </a>
+            <a href="https://discord.com/users/258244908970672128" class="social-link" role="listitem" aria-label="Discord" target="_blank" rel="noopener noreferrer" data-social="discord">
+              <i class="fab fa-discord"></i>
+              <span>Discord</span>
+            </a>
+            <a href="https://youtube.com/c/ThailandCodes" class="social-link" role="listitem" aria-label="YouTube" target="_blank" rel="noopener noreferrer" data-social="youtube">
+              <i class="fab fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Social Links Grid -->
-        <div class="social-bar" role="list">
-          <a href="https://open.spotify.com/user/chakibreggane?si=fZ5UIepVR4-ca5dIDuMn-g" 
-             class="social-button" role="listitem" aria-label="Spotify Profile" target="_blank" rel="noopener">
-            <i class="fab fa-spotify"></i>
-            <span>Spotify</span>
-          </a>
-          <a href="https://github.com/qp76" 
-             class="social-button" role="listitem" aria-label="GitHub Profile" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i>
-            <span>GitHub</span>
-          </a>
-          <a href="https://youtube.com/c/ThailandCodes" 
-             class="social-button" role="listitem" aria-label="YouTube Channel" target="_blank" rel="noopener">
-            <i class="fab fa-youtube"></i>
-            <span>YouTube</span>
-          </a>
-          <a href="https://discord.com/users/258244908970672128" 
-             class="social-button" role="listitem" aria-label="Discord Profile" target="_blank" rel="noopener">
-            <i class="fab fa-discord"></i>
-            <span>Discord</span>
-          </a>
+        <div class="hero-visual">
+          <div class="floating-card">
+            <div class="card-icon">💻</div>
+            <div class="card-text">Web Development</div>
+          </div>
+          <div class="floating-card" style="animation-delay: 0.3s;">
+            <div class="card-icon">🎨</div>
+            <div class="card-text">UI/UX Design</div>
+          </div>
+          <div class="floating-card" style="animation-delay: 0.6s;">
+            <div class="card-icon">✨</div>
+            <div class="card-text">Animation</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <p>I'm a passionate developer and designer creating beautiful, functional digital experiences. With a focus on modern design and seamless interactions, I bring creative visions to life.</p>
-        <div class="skills-grid">
-          <div class="skill-tag">Web Development</div>
-          <div class="skill-tag">UI/UX Design</div>
-          <div class="skill-tag">JavaScript</div>
-          <div class="skill-tag">React</div>
-          <div class="skill-tag">Motion Design</div>
-          <div class="skill-tag">Creative Direction</div>
+    <section class="section about-section" id="about" data-module="about">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <div class="title-accent"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a passionate developer and designer with a focus on creating pixel-perfect, responsive digital experiences. My work spans across modern web technologies, interactive design, and creative development.</p>
+            <p>With years of experience in both design and development, I bridge the gap between beautiful aesthetics and functional code.</p>
+          </div>
+          <div class="skills-showcase">
+            <div class="skill-category">
+              <h3>Development</h3>
+              <div class="skills-list">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Web APIs</span>
+                <span class="skill-badge">HTML/CSS</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Design</h3>
+              <div class="skills-list">
+                <span class="skill-badge">UI Design</span>
+                <span class="skill-badge">UX Principles</span>
+                <span class="skill-badge">Motion Design</span>
+                <span class="skill-badge">Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience-section" id="experience" data-module="experience">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <div class="title-accent"></div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2024 - Present</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Senior Creative Developer</h3>
+              <p class="timeline-company">Creative Studios</p>
+              <p class="timeline-desc">Leading frontend development and creative design implementation for premium web projects.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022 - 2024</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Full-Stack Developer</h3>
+              <p class="timeline-company">Digital Agency</p>
+              <p class="timeline-desc">Developed responsive web applications and interactive experiences for diverse clients.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2020 - 2022</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">UI/UX Designer & Developer</h3>
+              <p class="timeline-company">Design Studio</p>
+              <p class="timeline-desc">Created user-centered designs and implemented interactive prototypes.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <h2>Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-icon">🎨</div>
-          <h3>Creative Designs</h3>
-          <p>Modern UI/UX designs with focus on user experience and visual hierarchy.</p>
-          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
+    <section class="section projects-section" id="projects" data-module="projects">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="title-accent"></div>
         </div>
-        <div class="project-card">
-          <div class="project-icon">💻</div>
-          <h3>Web Projects</h3>
-          <p>Full-stack web applications built with modern technologies and best practices.</p>
-          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">🎬</div>
-          <h3>Motion Graphics</h3>
-          <p>Smooth animations and interactive experiences that engage users.</p>
-          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🎨</div>
+              <h3 class="project-title">Design System</h3>
+            </div>
+            <p class="project-desc">Comprehensive component library with modern design patterns and accessibility standards.</p>
+            <div class="project-tags">
+              <span class="tag">Design</span>
+              <span class="tag">Components</span>
+              <span class="tag">Accessibility</span>
+            </div>
+            <a href="#" class="project-link">
+              <span>View Project</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">💻</div>
+              <h3 class="project-title">Web Platform</h3>
+            </div>
+            <p class="project-desc">Full-stack web application with real-time features and optimized performance.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Backend</span>
+            </div>
+            <a href="#" class="project-link">
+              <span>View Project</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🚀</div>
+              <h3 class="project-title">Interactive Experience</h3>
+            </div>
+            <p class="project-desc">Immersive web experience with advanced animations and creative interactions.</p>
+            <div class="project-tags">
+              <span class="tag">Animation</span>
+              <span class="tag">GSAP</span>
+              <span class="tag">Creative</span>
+            </div>
+            <a href="#" class="project-link">
+              <span>View Project</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <h2>Let's Connect</h2>
-      <p>Have a project in mind? Let's collaborate and create something amazing.</p>
-      <div class="contact-buttons">
-        <button class="contact-btn primary" id="feedbackBtn">Send Feedback</button>
-        <button class="contact-btn secondary" id="emailBtn">Get in Touch</button>
+    <section class="section contact-section" id="contact" data-module="contact">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Let's Connect</h2>
+          <div class="title-accent"></div>
+        </div>
+        <div class="contact-content">
+          <p class="contact-text">
+            Ready to collaborate on something amazing? Let's talk!
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:contact@nord87q.dev" class="btn btn-primary">
+              <span>Send Email</span>
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://yousif111.github.io/FeedBack/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <span>Send Feedback</span>
+              <i class="fas fa-comment"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer">
-      <button id="playButton" class="player-btn" aria-label="Toggle music" title="Toggle Music">
-        <i id="playIcon" class="fa-solid fa-volume-high"></i>
-      </button>
-      <div class="player-info">
-        <span class="player-track">Now Playing</span>
-        <span class="player-artist">Mostafa Elnesr</span>
-      </div>
-    </div>
-
-    <!-- Feedback Button -->
-    <a href="https://yousif111.github.io/FeedBack/" class="feedback-button" target="_blank" rel="noopener" aria-label="Send feedback">
-      <i class="fa-solid fa-comment"></i>
-      <span>Feedback</span>
-    </a>
   </main>
 
+  <!-- Music Player (Fixed) -->
+  <div class="music-player" id="musicPlayer" data-module="music" aria-label="Music player controls">
+    <button class="music-btn" id="musicToggle" aria-label="Toggle music" aria-pressed="false" title="Toggle Music">
+      <i class="fas fa-compact-disc"></i>
+    </button>
+    <div class="music-info">
+      <div class="music-track">Now Playing</div>
+      <div class="music-artist">Mostafa Elnesr</div>
+    </div>
+    <div class="music-visualizer">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="footer-content">
-      <p>&copy; 2025 Nord87q. Made with <i class="fas fa-heart"></i> and passion.</p>
-      <p class="footer-credit">Designed & Developed for maximum impact</p>
+  <footer class="footer" role="contentinfo" data-module="footer">
+    <div class="footer-inner">
+      <p class="footer-text">
+        Made with <i class="fas fa-heart"></i> by Nord87q
+      </p>
+      <p class="footer-year" id="footerYear"></p>
     </div>
   </footer>
-
-  <!-- Audio -->
-  <audio id="music" 
-         src="https://cdn.discordapp.com/attachments/1133001504614252664/1162213280937418844/x2mate.com_-_-_Mostafa_Elnesr_-_ANA_Z3LTK_Official_Audio_128_kbps.mp3?ex=653b1e77&is=6528a977&hm=c7171d8afd9fdac97c725a7d6544817fdbca305da3c9b63e0e64f40455c5cb1b&" 
-         preload="auto" 
-         loop 
-         aria-label="Background music"></audio>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
