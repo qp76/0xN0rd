@@ -2,73 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nord87q - Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Fonts and icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nord87q - Creative Developer & Designer Portfolio. Explore my projects, skills, and latest work.">
+  <meta name="theme-color" content="#181823">
+  <meta property="og:title" content="Nord87q - Portfolio">
+  <meta property="og:description" content="Creative Developer & Designer Portfolio">
+  <meta property="og:type" content="website">
+  
+  <title>Nord87q - Creative Developer & Designer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
   <!-- Styles -->
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <!-- Overlay / Welcome -->
+  <!-- Loading Screen / Overlay -->
   <div class="overlay" id="overlay">
     <div class="overlay-content">
-      <h1>Welcome to Nord87q</h1>
-      <p>Discover my links, listen to music, and enjoy the vibe.</p>
-      <button class="start-btn" id="startBtn">Enter</button>
+      <div class="overlay-logo">
+        <svg viewBox="0 0 100 100" class="animated-logo">
+          <circle cx="50" cy="50" r="45" class="logo-circle"/>
+          <text x="50" y="60" text-anchor="middle" class="logo-text">nord</text>
+        </svg>
+      </div>
+      <h1 class="overlay-title">Nord87q</h1>
+      <p class="overlay-subtitle">Creative Developer & Designer</p>
+      <p class="overlay-description">Discover my links, projects, and vibe.</p>
+      <button class="start-btn" id="startBtn">Enter Portfolio</button>
+      <div class="loading-bar" id="loadingBar"></div>
     </div>
   </div>
 
   <!-- Background Videos -->
-  <video id="bg-video-1" class="bg-video" src="Snaptik_7288236448220777761_sedef-kilic.mp4" preload="auto"></video>
-  <video id="bg-video-2" class="bg-video" src="Snaptik.app_7288813616575352097.mp4" preload="auto"></video>
-  <video id="bg-video-3" class="bg-video" src="Snaptik.app_7291154890955443462.mp4" preload="auto"></video>
-  <video id="bg-video-4" class="bg-video" src="Snaptik_7289443155374542081_tiktok.mp4" preload="auto"></video>
+  <div class="bg-container">
+    <video id="bg-video-1" class="bg-video" src="Snaptik_7288236448220777761_sedef-kilic.mp4" preload="auto" muted></video>
+    <video id="bg-video-2" class="bg-video" src="Snaptik.app_7288813616575352097.mp4" preload="auto" muted></video>
+    <video id="bg-video-3" class="bg-video" src="Snaptik.app_7291154890955443462.mp4" preload="auto" muted></video>
+    <video id="bg-video-4" class="bg-video" src="Snaptik_7289443155374542081_tiktok.mp4" preload="auto" muted></video>
+    <div class="bg-overlay"></div>
+  </div>
 
   <!-- Custom Cursor -->
   <div class="cursor cursor--large"></div>
   <div class="cursor cursor--small"></div>
 
-  <!-- Top Bar -->
-  <header id="top-bar">
-    <div id="palestine-flag">
-      <img src="state-of-palestine-694_256.gif" alt="Palestine Flag">
+  <!-- Navigation Header -->
+  <header id="top-bar" role="banner">
+    <div class="header-content">
+      <div class="flag-section" title="Free Palestine">
+        <img src="state-of-palestine-694_256.gif" alt="Palestine Flag" class="palestine-flag">
+        <span class="flag-text">Free Palestine 🇵🇸</span>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
     </div>
-    <span id="palestine-text">Free Palestine 🇵🇸</span>
   </header>
 
   <!-- Main Content -->
-  <main>
-    <div id="clock-container">
-      <div id="clock"></div>
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div id="clock-container" aria-live="polite" aria-label="Current time">
+          <div id="clock"></div>
+        </div>
+        
+        <div class="profile-card">
+          <div class="profile-avatar">N</div>
+          <h1 class="profile-name">Nord87q</h1>
+          <p class="profile-role">Full-Stack Developer • Designer • Creative</p>
+        </div>
+
+        <!-- Social Links Grid -->
+        <div class="social-bar" role="list">
+          <a href="https://open.spotify.com/user/chakibreggane?si=fZ5UIepVR4-ca5dIDuMn-g" 
+             class="social-button" role="listitem" aria-label="Spotify Profile" target="_blank" rel="noopener">
+            <i class="fab fa-spotify"></i>
+            <span>Spotify</span>
+          </a>
+          <a href="https://github.com/qp76" 
+             class="social-button" role="listitem" aria-label="GitHub Profile" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://youtube.com/c/ThailandCodes" 
+             class="social-button" role="listitem" aria-label="YouTube Channel" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a href="https://discord.com/users/258244908970672128" 
+             class="social-button" role="listitem" aria-label="Discord Profile" target="_blank" rel="noopener">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>I'm a passionate developer and designer creating beautiful, functional digital experiences. With a focus on modern design and seamless interactions, I bring creative visions to life.</p>
+        <div class="skills-grid">
+          <div class="skill-tag">Web Development</div>
+          <div class="skill-tag">UI/UX Design</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">React</div>
+          <div class="skill-tag">Motion Design</div>
+          <div class="skill-tag">Creative Direction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">🎨</div>
+          <h3>Creative Designs</h3>
+          <p>Modern UI/UX designs with focus on user experience and visual hierarchy.</p>
+          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">💻</div>
+          <h3>Web Projects</h3>
+          <p>Full-stack web applications built with modern technologies and best practices.</p>
+          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🎬</div>
+          <h3>Motion Graphics</h3>
+          <p>Smooth animations and interactive experiences that engage users.</p>
+          <a href="#" class="project-link">View More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Let's Connect</h2>
+      <p>Have a project in mind? Let's collaborate and create something amazing.</p>
+      <div class="contact-buttons">
+        <button class="contact-btn primary" id="feedbackBtn">Send Feedback</button>
+        <button class="contact-btn secondary" id="emailBtn">Get in Touch</button>
+      </div>
+    </section>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+      <button id="playButton" class="player-btn" aria-label="Toggle music" title="Toggle Music">
+        <i id="playIcon" class="fa-solid fa-volume-high"></i>
+      </button>
+      <div class="player-info">
+        <span class="player-track">Now Playing</span>
+        <span class="player-artist">Mostafa Elnesr</span>
+      </div>
     </div>
-    <div class="social-bar">
-      <button data-link="https://open.spotify.com/user/chakibreggane?si=fZ5UIepVR4-ca5dIDuMn-g" aria-label="Spotify"><i class="fab fa-spotify"></i></button>
-      <button data-link="https://www.roblox.com/" aria-label="Roblox"><img src="https://img.icons8.com/plasticine/100/roblox-new.png" alt="Roblox" class="icon-img"></button>
-      <button data-link="https://github.com/qp76" aria-label="GitHub"><i class="fa-brands fa-github"></i></button>
-      <button data-link="https://youtube.com/c/ThailandCodes" aria-label="YouTube"><i class="fab fa-youtube"></i></button>
-      <button data-link="https://discord.com/users/258244908970672128" aria-label="Discord"><i class="fab fa-discord"></i></button>
-    </div>
-    <button id="playButton" class="music-button" aria-label="Toggle Music">
-      <i id="playIcon" class="fa-solid fa-volume-high fa-2xl"></i>
-    </button>
-    <button class="bottom-right-button" data-link="https://yousif111.github.io/FeedBack/">
-      FeedBack <i class="fa-solid fa-comment"></i>
-    </button>
+
+    <!-- Feedback Button -->
+    <a href="https://yousif111.github.io/FeedBack/" class="feedback-button" target="_blank" rel="noopener" aria-label="Send feedback">
+      <i class="fa-solid fa-comment"></i>
+      <span>Feedback</span>
+    </a>
   </main>
 
-  <!-- Audio -->
-  <audio id="music" src="https://cdn.discordapp.com/attachments/1133001504614252664/1162213280937418844/x2mate.com_-_-_Mostafa_Elnesr_-_ANA_Z3LTK_Official_Audio_128_kbps.mp3?ex=653b1e77&is=6528a977&hm=c7171d8afd9fdac97c725a7d6544817fdbca305da3c9b63e0e64f40455c5cb1b&" preload="auto" loop></audio>
-
   <!-- Footer -->
-  <footer>
-    <span>&copy; 2025 qp76. Made with ❤️</span>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2025 Nord87q. Made with <i class="fas fa-heart"></i> and passion.</p>
+      <p class="footer-credit">Designed & Developed for maximum impact</p>
+    </div>
   </footer>
 
+  <!-- Audio -->
+  <audio id="music" 
+         src="https://cdn.discordapp.com/attachments/1133001504614252664/1162213280937418844/x2mate.com_-_-_Mostafa_Elnesr_-_ANA_Z3LTK_Official_Audio_128_kbps.mp3?ex=653b1e77&is=6528a977&hm=c7171d8afd9fdac97c725a7d6544817fdbca305da3c9b63e0e64f40455c5cb1b&" 
+         preload="auto" 
+         loop 
+         aria-label="Background music"></audio>
+
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
