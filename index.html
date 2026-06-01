@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nord87q - Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Overlay / Welcome -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <h1>Welcome to Nord87q</h1>
+      <p>Discover my links, listen to music, and enjoy the vibe.</p>
+      <button class="start-btn" id="startBtn">Enter</button>
+    </div>
+  </div>
+
+  <!-- Background Videos -->
+  <video id="bg-video-1" class="bg-video" src="Snaptik_7288236448220777761_sedef-kilic.mp4" preload="auto"></video>
+  <video id="bg-video-2" class="bg-video" src="Snaptik.app_7288813616575352097.mp4" preload="auto"></video>
+  <video id="bg-video-3" class="bg-video" src="Snaptik.app_7291154890955443462.mp4" preload="auto"></video>
+  <video id="bg-video-4" class="bg-video" src="Snaptik_7289443155374542081_tiktok.mp4" preload="auto"></video>
+
+  <!-- Custom Cursor -->
+  <div class="cursor cursor--large"></div>
+  <div class="cursor cursor--small"></div>
+
+  <!-- Top Bar -->
+  <header id="top-bar">
+    <div id="palestine-flag">
+      <img src="state-of-palestine-694_256.gif" alt="Palestine Flag">
+    </div>
+    <span id="palestine-text">Free Palestine 🇵🇸</span>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div id="clock-container">
+      <div id="clock"></div>
+    </div>
+    <div class="social-bar">
+      <button data-link="https://open.spotify.com/user/chakibreggane?si=fZ5UIepVR4-ca5dIDuMn-g" aria-label="Spotify"><i class="fab fa-spotify"></i></button>
+      <button data-link="https://www.roblox.com/" aria-label="Roblox"><img src="https://img.icons8.com/plasticine/100/roblox-new.png" alt="Roblox" class="icon-img"></button>
+      <button data-link="https://github.com/qp76" aria-label="GitHub"><i class="fa-brands fa-github"></i></button>
+      <button data-link="https://youtube.com/c/ThailandCodes" aria-label="YouTube"><i class="fab fa-youtube"></i></button>
+      <button data-link="https://discord.com/users/258244908970672128" aria-label="Discord"><i class="fab fa-discord"></i></button>
+    </div>
+    <button id="playButton" class="music-button" aria-label="Toggle Music">
+      <i id="playIcon" class="fa-solid fa-volume-high fa-2xl"></i>
+    </button>
+    <button class="bottom-right-button" data-link="https://yousif111.github.io/FeedBack/">
+      FeedBack <i class="fa-solid fa-comment"></i>
+    </button>
+  </main>
+
+  <!-- Audio -->
+  <audio id="music" src="https://cdn.discordapp.com/attachments/1133001504614252664/1162213280937418844/x2mate.com_-_-_Mostafa_Elnesr_-_ANA_Z3LTK_Official_Audio_128_kbps.mp3?ex=653b1e77&is=6528a977&hm=c7171d8afd9fdac97c725a7d6544817fdbca305da3c9b63e0e64f40455c5cb1b&" preload="auto" loop></audio>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2025 qp76. Made with ❤️</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
